@@ -3,14 +3,11 @@ export function objectsAreSame(objOne, objTwo) {
   const objTwoSize = Object.keys(objTwo).length;
   if (objOneSize !== objTwoSize) return false;
 
-  let objectsAreSame = true;
   for (const prop in objOne) {
     if (objOne[prop] !== objTwo[prop]) {
-      objectsAreSame = false;
-
-      break;
+      return false
     }
   }
 
-  return objectsAreSame;
+  return true;
 }
